@@ -5,6 +5,8 @@ deploy/*
 _ReSharper.*
 *.csproj.user
 *.resharper.user
+*.ReSharper
+*.ReSharper.user
 *.resharper
 *.suo
 *.cache
