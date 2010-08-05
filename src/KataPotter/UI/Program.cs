@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using KataPotter.Core;
+using KataPotter.Core.Books;
+using KataPotter.Core.Calculations;
 
 namespace KataPotter.UI
 {

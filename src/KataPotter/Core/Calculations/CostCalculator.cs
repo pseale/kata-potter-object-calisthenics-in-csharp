@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using KataPotter.Core.Books;
 using KataPotter.Extensions;
 
-namespace KataPotter.Core
+namespace KataPotter.Core.Calculations
 {
     public class CostCalculator
     {

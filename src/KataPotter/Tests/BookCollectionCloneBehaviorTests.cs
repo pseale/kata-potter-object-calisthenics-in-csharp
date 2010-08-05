@@ -1,4 +1,5 @@
-using KataPotter.Core;
+using KataPotter.Core.Books;
+using KataPotter.Core.Calculations;
 using NUnit.Framework;
 
 namespace KataPotter.Tests

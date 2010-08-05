@@ -1,4 +1,4 @@
-﻿namespace KataPotter.Core.BookSet
+﻿namespace KataPotter.Core.BookSets
 {
     public class BookSetFactory
     {

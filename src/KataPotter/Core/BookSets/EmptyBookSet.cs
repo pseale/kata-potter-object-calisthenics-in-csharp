@@ -1,4 +1,6 @@
-﻿namespace KataPotter.Core.BookSet
+﻿using KataPotter.Core.Calculations;
+
+namespace KataPotter.Core.BookSets
 {
     public class EmptyBookSet : IBookSet
     {

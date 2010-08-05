@@ -1,4 +1,4 @@
-﻿namespace KataPotter.Core
+﻿namespace KataPotter.Core.Books
 {
     public class Book
     {

@@ -1,5 +1,4 @@
-﻿using KataPotter.Core;
-using KataPotter.Core.BookSet;
+﻿using KataPotter.Core.BookSets;
 using KataPotter.Extensions;
 using NUnit.Framework;
 

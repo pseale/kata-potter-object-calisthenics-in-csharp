@@ -41,23 +41,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Book.cs" />
-    <Compile Include="Core\BookCollection.cs" />
-    <Compile Include="Core\BookSet\BookSetFactory.cs" />
-    <Compile Include="Core\BookSet\BookSetType.cs" />
-    <Compile Include="Core\BookSet\EmptyBookSet.cs" />
-    <Compile Include="Core\BookSet\FiveBookSet.cs" />
-    <Compile Include="Core\BookSet\FourBookSet.cs" />
-    <Compile Include="Core\BookSet\IBookSet.cs" />
-    <Compile Include="Core\BookSet\OneBookSet.cs" />
-    <Compile Include="Core\BookSet\ThreeBookSet.cs" />
-    <Compile Include="Core\BookSet\TwoBookSet.cs" />
-    <Compile Include="Core\BookTitle.cs" />
-    <Compile Include="Core\BookTitleCollection.cs" />
-    <Compile Include="Core\CostCalculator.cs" />
-    <Compile Include="Core\Money.cs" />
-    <Compile Include="Core\RemoveSetResult.cs" />
-    <Compile Include="Core\ZeroMoney.cs" />
+    <Compile Include="Core\BookSets\BookSetFactory.cs" />
+    <Compile Include="Core\BookSets\BookSetType.cs" />
+    <Compile Include="Core\BookSets\EmptyBookSet.cs" />
+    <Compile Include="Core\BookSets\FiveBookSet.cs" />
+    <Compile Include="Core\BookSets\FourBookSet.cs" />
+    <Compile Include="Core\BookSets\IBookSet.cs" />
+    <Compile Include="Core\BookSets\OneBookSet.cs" />
+    <Compile Include="Core\BookSets\ThreeBookSet.cs" />
+    <Compile Include="Core\BookSets\TwoBookSet.cs" />
+    <Compile Include="Core\Books\Book.cs" />
+    <Compile Include="Core\Calculations\BookCollection.cs" />
+    <Compile Include="Core\Calculations\CostCalculator.cs" />
+    <Compile Include="Core\Calculations\Money.cs" />
+    <Compile Include="Core\Calculations\RemoveSetResult.cs" />
+    <Compile Include="Core\Books\BookTitle.cs" />
+    <Compile Include="Core\Books\BookTitleCollection.cs" />
+    <Compile Include="Core\Calculations\ZeroMoney.cs" />
     <Compile Include="Extensions\DecimalExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Tests\BookCollectionCloneBehaviorTests.cs" />

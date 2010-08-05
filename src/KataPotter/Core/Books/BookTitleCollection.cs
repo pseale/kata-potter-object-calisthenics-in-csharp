@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using KataPotter.Core.BookSet;
+using KataPotter.Core.BookSets;
 
-namespace KataPotter.Core
+namespace KataPotter.Core.Books
 {
     public class BookTitleCollection : IEnumerable<BookTitle>
     {

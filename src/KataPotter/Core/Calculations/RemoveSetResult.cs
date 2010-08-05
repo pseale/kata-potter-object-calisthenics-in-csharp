@@ -1,6 +1,6 @@
-﻿using KataPotter.Core.BookSet;
+﻿using KataPotter.Core.BookSets;
 
-namespace KataPotter.Core
+namespace KataPotter.Core.Calculations
 {
     public class RemoveSetResult
     {

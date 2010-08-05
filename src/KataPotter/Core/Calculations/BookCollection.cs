@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using KataPotter.Core.Books;
 using KataPotter.Extensions;
 
-namespace KataPotter.Core
+namespace KataPotter.Core.Calculations
 {
     public class BookCollection : IEnumerable<Book>
     {
