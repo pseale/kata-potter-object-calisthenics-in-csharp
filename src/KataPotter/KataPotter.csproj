@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\BookSets\BookSetFactory.cs" />
-    <Compile Include="Core\BookSets\BookSetType.cs" />
     <Compile Include="Core\BookSets\EmptyBookSet.cs" />
     <Compile Include="Core\BookSets\FiveBookSet.cs" />
     <Compile Include="Core\BookSets\FourBookSet.cs" />

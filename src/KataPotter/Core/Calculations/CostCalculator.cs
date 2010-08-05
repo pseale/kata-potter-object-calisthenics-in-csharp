@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using KataPotter.Core.Books;
-using KataPotter.Extensions;
 
 namespace KataPotter.Core.Calculations
 {
@@ -8,8 +7,7 @@ namespace KataPotter.Core.Calculations
     {
         public Money CalculateTotal(IEnumerable<Book> books)
         {
-            var bookCollection = new BookCollection();
-            books.Each(bookCollection.Add);
+            var bookCollection = new BookCollection(books);
             return CalculateTotalRecursive(bookCollection.RemoveSet());
         }
 

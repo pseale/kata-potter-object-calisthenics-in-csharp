@@ -4,7 +4,6 @@
     {
         readonly decimal _amount;
 
-        public Money() { }
         public Money(decimal amount)
         {
             _amount = amount;

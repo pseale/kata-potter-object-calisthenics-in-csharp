@@ -11,18 +11,17 @@ namespace KataPotter.Core.Books
     {
         List<Book> _books = new List<Book>();
 
+        public BookCollection(IEnumerable<Book> books)
+        {
+            _books.AddRange(books);
+        }
+
         public RemoveSetResult RemoveSet()
         {
             var books = Clone();
             var uniqueBookTitles = books.GetOptimumBookTitlesSet();
             uniqueBookTitles.Each(books.Remove);
             return new RemoveSetResult(books, new BookSetFactory().Create(uniqueBookTitles));
-        }
-
-        //beware, modifies state
-        public void Add(Book book)
-        {
-            _books.Add(book);
         }
 
         //beware, modifies state
@@ -84,9 +83,7 @@ namespace KataPotter.Core.Books
         //should be private, but is public for unit tests
         public BookCollection Clone()
         {
-            var clone = new BookCollection();
-            _books.Each(clone.Add);
-            return clone;
+            return new BookCollection(_books);
         }
 
         public bool IsEmpty()
