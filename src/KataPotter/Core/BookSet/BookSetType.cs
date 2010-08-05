@@ -1,4 +1,4 @@
-﻿namespace KataPotter.Core
+﻿namespace KataPotter.Core.BookSet
 {
     public enum BookSetType
     {

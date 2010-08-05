@@ -1,11 +1,13 @@
-﻿namespace KataPotter.Core
+﻿using KataPotter.Core.BookSet;
+
+namespace KataPotter.Core
 {
     public class RemoveSetResult
     {
         readonly BookCollection _books;
-        readonly BookSet _bookSet;
+        readonly IBookSet _bookSet;
 
-        public RemoveSetResult(BookCollection books, BookSet bookSet)
+        public RemoveSetResult(BookCollection books, IBookSet bookSet)
         {
             _books = books;
             _bookSet = bookSet;
@@ -19,7 +21,7 @@
         public Money AddCost(Money money)
         {
             return _bookSet
-                .CalculatePrice()
+                .Calculate()
                 .Add(money);
         }
 

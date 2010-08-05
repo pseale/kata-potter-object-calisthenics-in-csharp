@@ -43,15 +43,15 @@
   <ItemGroup>
     <Compile Include="Core\Book.cs" />
     <Compile Include="Core\BookCollection.cs" />
-    <Compile Include="Core\BookSet.cs" />
-    <Compile Include="Core\BookSetCostCalculators\EmptyBookSetCostCalculator.cs" />
-    <Compile Include="Core\BookSetCostCalculators\FiveBookSetCostCalculator.cs" />
-    <Compile Include="Core\BookSetCostCalculators\FourBookSetCostCalculator.cs" />
-    <Compile Include="Core\BookSetCostCalculators\IBookSetCostCalculator.cs" />
-    <Compile Include="Core\BookSetCostCalculators\OneBookSetCostCalculator.cs" />
-    <Compile Include="Core\BookSetCostCalculators\ThreeBookSetCostCalculator.cs" />
-    <Compile Include="Core\BookSetCostCalculators\TwoBookSetCostCalculator.cs" />
-    <Compile Include="Core\BookSetType.cs" />
+    <Compile Include="Core\BookSet\BookSetFactory.cs" />
+    <Compile Include="Core\BookSet\BookSetType.cs" />
+    <Compile Include="Core\BookSet\EmptyBookSet.cs" />
+    <Compile Include="Core\BookSet\FiveBookSet.cs" />
+    <Compile Include="Core\BookSet\FourBookSet.cs" />
+    <Compile Include="Core\BookSet\IBookSet.cs" />
+    <Compile Include="Core\BookSet\OneBookSet.cs" />
+    <Compile Include="Core\BookSet\ThreeBookSet.cs" />
+    <Compile Include="Core\BookSet\TwoBookSet.cs" />
     <Compile Include="Core\BookTitle.cs" />
     <Compile Include="Core\BookTitleCollection.cs" />
     <Compile Include="Core\CostCalculator.cs" />

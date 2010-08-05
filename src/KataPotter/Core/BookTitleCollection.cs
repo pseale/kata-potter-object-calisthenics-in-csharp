@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using KataPotter.Core.BookSet;
 
 namespace KataPotter.Core
 {
@@ -18,26 +19,26 @@ namespace KataPotter.Core
             _bookTitles.AddRange(titles);
         }
 
-        public BookSet SelectBookSet()
+        public IBookSet SelectBookSet()
         {
             //factory method
             switch (_bookTitles.Count)
             {
                 case 0:
-                    return new BookSet(BookSetType.Empty);
+                    return new EmptyBookSet();
                 case 1:
-                    return new BookSet(BookSetType.OneBook);
+                    return new OneBookSet();
                 case 2:
-                    return new BookSet(BookSetType.TwoBooks);
+                    return new TwoBookSet();
                 case 3:
-                    return new BookSet(BookSetType.ThreeBooks);
+                    return new ThreeBookSet();
                 case 4:
-                    return new BookSet(BookSetType.FourBooks);
+                    return new FourBookSet();
                 case 5:
-                    return new BookSet(BookSetType.FiveBooks);
+                    return new FiveBookSet();
             }
 
-            return new BookSet(BookSetType.Empty);
+            return new EmptyBookSet();
         }
 
         public IEnumerator<BookTitle> GetEnumerator()
