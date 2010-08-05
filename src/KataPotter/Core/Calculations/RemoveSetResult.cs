@@ -1,4 +1,5 @@
-﻿using KataPotter.Core.BookSets;
+﻿using KataPotter.Core.Books;
+using KataPotter.Core.BookSets;
 
 namespace KataPotter.Core.Calculations
 {
