@@ -11,7 +11,7 @@ namespace KataPotter.Tests
             var money1 = new Money(1m);
             var money2 = new Money(4m);
 
-            Assert.AreEqual("5", money1.Add(money2).ToString());
+            Assert.AreEqual("5.00", money1.Add(money2).ToString());
         }
 
         [Test]
@@ -19,7 +19,7 @@ namespace KataPotter.Tests
         {
             var money1 = new Money(1m);
 
-            Assert.AreEqual("1", money1.Add(null).ToString());
+            Assert.AreEqual("1.00", money1.Add(null).ToString());
         }
     }
 }

@@ -5,7 +5,7 @@ namespace KataPotter.Extensions
         //for tests
         public static string FormatLikeMoney(this decimal amount)
         {
-            return amount.ToString("0");
+            return amount.ToString("0.00");
         }
     }
 }

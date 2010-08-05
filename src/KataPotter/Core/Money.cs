@@ -23,7 +23,7 @@ namespace KataPotter.Core
 
         public override string ToString()
         {
-            return _amount.ToString("0");
+            return _amount.ToString("0.00");
         }
     }
 }
