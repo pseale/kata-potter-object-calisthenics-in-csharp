@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using KataPotter.Extensions;
+﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace KataPotter.Core
 {
-    public class BookTitlesCollection
+    public class BookTitleCollection : IEnumerable<BookTitle>
     {
         readonly List<BookTitle> _bookTitles = new List<BookTitle>();
 
@@ -16,11 +16,6 @@ namespace KataPotter.Core
         public void Add(IEnumerable<BookTitle> titles)
         {
             _bookTitles.AddRange(titles);
-        }
-
-        public void RemoveFrom(BookCollection books)
-        {
-            _bookTitles.Each(books.Remove);
         }
 
         public BookSet SelectBookSet()
@@ -43,6 +38,16 @@ namespace KataPotter.Core
             }
 
             return new BookSet(BookSetType.Empty);
+        }
+
+        public IEnumerator<BookTitle> GetEnumerator()
+        {
+            return _bookTitles.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

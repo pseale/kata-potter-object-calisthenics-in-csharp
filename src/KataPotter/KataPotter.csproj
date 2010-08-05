@@ -53,7 +53,7 @@
     <Compile Include="Core\BookSetCostCalculators\TwoBookSetCostCalculator.cs" />
     <Compile Include="Core\BookSetType.cs" />
     <Compile Include="Core\BookTitle.cs" />
-    <Compile Include="Core\BookTitlesCollection.cs" />
+    <Compile Include="Core\BookTitleCollection.cs" />
     <Compile Include="Core\CostCalculator.cs" />
     <Compile Include="Core\Money.cs" />
     <Compile Include="Core\RemoveSetResult.cs" />

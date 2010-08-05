@@ -13,7 +13,7 @@ namespace KataPotter.Core
         {
             var books = Clone();
             var uniqueBookTitles = books.GetOptimumBookTitlesSet();
-            uniqueBookTitles.RemoveFrom(books);
+            uniqueBookTitles.Each(books.Remove);
             return new RemoveSetResult(books, uniqueBookTitles.SelectBookSet());
         }
 
@@ -37,17 +37,17 @@ namespace KataPotter.Core
             _books.Remove(book);
         }
 
-        public BookTitlesCollection GetOptimumBookTitlesSet()
+        public BookTitleCollection GetOptimumBookTitlesSet()
         {
             if (QualifiesForSpecialDiscount()) return BuildSpecialDiscountBookSet();
             return BuildLargestBookSetPossible();
         }
 
-        private BookTitlesCollection BuildSpecialDiscountBookSet()
+        private BookTitleCollection BuildSpecialDiscountBookSet()
         {
-            var collection = new BookTitlesCollection();
+            var collection = new BookTitleCollection();
             var bookSets = GroupBooksByNumberOfBooksPerTitle();
-            bookSets.Last().Each(x => collection.Add(x.Key));
+            collection.Add(bookSets.Last().Select(x=>x.Key));
             collection.Add(bookSets.First().First().Key);
             return collection;
         }
@@ -69,9 +69,9 @@ namespace KataPotter.Core
             return _books.GroupBy(x => x.Title).GroupBy(x => x.Count()).OrderBy(x=>x.Key);
         }
 
-        private BookTitlesCollection BuildLargestBookSetPossible()
+        private BookTitleCollection BuildLargestBookSetPossible()
         {
-            var bookTitlesCollection = new BookTitlesCollection();
+            var bookTitlesCollection = new BookTitleCollection();
             _books
                 .GroupBy(x => x.Title)
                 .Select(x => x.Key)
