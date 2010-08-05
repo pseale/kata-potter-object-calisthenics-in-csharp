@@ -7,14 +7,7 @@ namespace KataPotter.Core.Books
     {
         readonly List<BookTitle> _bookTitles = new List<BookTitle>();
 
-        //beware, modifies state
-        public void Add(BookTitle title)
-        {
-            _bookTitles.Add(title);
-        }
-
-        //beware, modifies state
-        public void Add(IEnumerable<BookTitle> titles)
+        public BookTitleCollection(IEnumerable<BookTitle> titles)
         {
             _bookTitles.AddRange(titles);
         }

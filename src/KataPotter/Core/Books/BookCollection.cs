@@ -46,11 +46,15 @@ namespace KataPotter.Core.Books
 
         private BookTitleCollection BuildSpecialDiscountBookSet()
         {
-            var collection = new BookTitleCollection();
             var bookSets = GroupBooksByNumberOfBooksPerTitle();
-            collection.Add(bookSets.Last().Select(x=>x.Key));
-            collection.Add(bookSets.First().First().Key);
-            return collection;
+            var titles = bookSets
+                .Last()
+                .Select(x => x.Key)
+                .Union(new[]
+                           {
+                               bookSets.First().First().Key
+                           });
+            return new BookTitleCollection(titles);
         }
 
         //should be private, but made public for tests
@@ -72,12 +76,10 @@ namespace KataPotter.Core.Books
 
         private BookTitleCollection BuildLargestBookSetPossible()
         {
-            var bookTitlesCollection = new BookTitleCollection();
-            _books
+            var titles = _books
                 .GroupBy(x => x.Title)
-                .Select(x => x.Key)
-                .Each(bookTitlesCollection.Add);
-            return bookTitlesCollection;
+                .Select(x => x.Key);
+            return new BookTitleCollection(titles);
         }
 
         //should be private, but is public for unit tests
