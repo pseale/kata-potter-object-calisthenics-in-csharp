@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using KataPotter.Extensions;
 
 namespace KataPotter.Core
 {
-    public class BookCollection
+    public class BookCollection : IEnumerable<Book>
     {
         List<Book> _books = new List<Book>();
 
@@ -89,6 +90,16 @@ namespace KataPotter.Core
         public bool IsEmpty()
         {
             return _books.Count == 0;
+        }
+
+        public IEnumerator<Book> GetEnumerator()
+        {
+            return _books.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
 
         public override string ToString()

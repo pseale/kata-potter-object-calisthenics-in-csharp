@@ -1,17 +1,15 @@
-﻿namespace KataPotter.Core
+﻿using System.Collections.Generic;
+using KataPotter.Extensions;
+
+namespace KataPotter.Core
 {
     public class CostCalculator
     {
-        readonly BookCollection _books = new BookCollection();
-
-        public void Add(Book book)
+        public Money CalculateTotal(IEnumerable<Book> books)
         {
-            _books.Add(book);
-        }
-
-        public Money CalculateTotal()
-        {
-            return CalculateTotalRecursive(_books.RemoveSet());
+            var bookCollection = new BookCollection();
+            books.Each(bookCollection.Add);
+            return CalculateTotalRecursive(bookCollection.RemoveSet());
         }
 
         private Money CalculateTotalRecursive(RemoveSetResult result)

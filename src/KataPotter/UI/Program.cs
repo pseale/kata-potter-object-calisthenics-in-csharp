@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using KataPotter.Core;
-using KataPotter.Extensions;
 
 namespace KataPotter.UI
 {
@@ -26,9 +25,9 @@ namespace KataPotter.UI
 
         private static string GetTotalFor(IEnumerable<Book> books)
         {
-            var costCalculator = new CostCalculator();
-            books.Each(costCalculator.Add);
-            return costCalculator.CalculateTotal().ToString();
+            return new CostCalculator()
+                .CalculateTotal(books)
+                .ToString();
         }
 
         //lazy; return empty collection if we failed to parse the inputted book list
