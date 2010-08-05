@@ -63,7 +63,6 @@
     <Compile Include="Tests\BookCollectionCloneBehaviorTests.cs" />
     <Compile Include="Tests\BookCollectionRemoveSetBehaviorTests.cs" />
     <Compile Include="Tests\BookCollectionSpecialDiscountBehaviorTests.cs" />
-    <Compile Include="Tests\BookSetCalculateBehaviorTests.cs" />
     <Compile Include="UI\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\BookCollectionDisplayBehaviorTests.cs" />

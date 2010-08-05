@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using KataPotter.Core.Books;
+using KataPotter.Core.BookSets;
 using KataPotter.Extensions;
 
 namespace KataPotter.Core.Calculations
@@ -15,7 +16,7 @@ namespace KataPotter.Core.Calculations
             var books = Clone();
             var uniqueBookTitles = books.GetOptimumBookTitlesSet();
             uniqueBookTitles.Each(books.Remove);
-            return new RemoveSetResult(books, uniqueBookTitles.SelectBookSet());
+            return new RemoveSetResult(books, new BookSetFactory().Create(uniqueBookTitles));
         }
 
         //beware, modifies state

@@ -1,26 +1,29 @@
-﻿namespace KataPotter.Core.BookSets
+﻿using System.Linq;
+using KataPotter.Core.Books;
+
+namespace KataPotter.Core.BookSets
 {
     public class BookSetFactory
     {
-        public IBookSet Create(BookSetType bookSetType)
+        public IBookSet Create(BookTitleCollection collection)
         {
-            switch (bookSetType)
+            //factory method
+            switch (collection.Count())
             {
-                case BookSetType.Empty:
+                case 0:
                     return new EmptyBookSet();
-                case BookSetType.OneBook:
+                case 1:
                     return new OneBookSet();
-                case BookSetType.TwoBooks:
+                case 2:
                     return new TwoBookSet();
-                case BookSetType.ThreeBooks:
+                case 3:
                     return new ThreeBookSet();
-                case BookSetType.FourBooks:
+                case 4:
                     return new FourBookSet();
-                case BookSetType.FiveBooks:
+                case 5:
                     return new FiveBookSet();
             }
 
-            //required by compiler
             return new EmptyBookSet();
         }
     }
