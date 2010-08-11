@@ -3,6 +3,7 @@ using NUnit.Framework;
 
 namespace KataPotter.Tests
 {
+    [TestFixture]
     public class MoneyTests
     {
         [Test]

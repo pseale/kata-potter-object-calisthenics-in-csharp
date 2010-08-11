@@ -9,13 +9,13 @@ namespace KataPotter.Core.Calculations
         public Money CalculateTotal(IEnumerable<Book> books)
         {
             var bookCollection = new BookCollection(books);
-            return CalculateTotalRecursive(new BookSetDiscoverer().RemoveSet(bookCollection));
+            return CalculateRecursive(new BookSetDiscoverer().RemoveSet(bookCollection));
         }
 
-        private Money CalculateTotalRecursive(RemoveSetResult result)
+        private Money CalculateRecursive(RemoveSetResult result)
         {
             if (result.IsEmpty()) return result.AddCost(new ZeroMoney());
-            return result.AddCost(CalculateTotalRecursive(result.RemoveSet()));
+            return result.AddCost(CalculateRecursive(result.RemoveSet()));
         }
     }
 }
