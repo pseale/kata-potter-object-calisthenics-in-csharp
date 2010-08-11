@@ -28,7 +28,7 @@ namespace KataPotter.Core.Calculations
 
         public RemoveSetResult RemoveSet()
         {
-            return _books.RemoveSet();
+            return new BookSetDiscoverer().RemoveSet(_books);
         }
 
         public override string ToString()

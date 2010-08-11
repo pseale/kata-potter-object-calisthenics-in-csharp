@@ -41,6 +41,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\BookSets\BookSetDiscoverer.cs" />
     <Compile Include="Core\BookSets\BookSetFactory.cs" />
     <Compile Include="Core\BookSets\EmptyBookSet.cs" />
     <Compile Include="Core\BookSets\FiveBookSet.cs" />
@@ -53,18 +54,19 @@
     <Compile Include="Core\Books\BookCollection.cs" />
     <Compile Include="Core\Calculations\CostCalculator.cs" />
     <Compile Include="Core\Calculations\Money.cs" />
+    <Compile Include="Core\Calculations\NormalDiscountCalculator.cs" />
     <Compile Include="Core\Calculations\RemoveSetResult.cs" />
     <Compile Include="Core\Books\BookTitle.cs" />
     <Compile Include="Core\Books\BookTitleCollection.cs" />
+    <Compile Include="Core\Calculations\SpecialDiscountCalculator.cs" />
     <Compile Include="Core\Calculations\ZeroMoney.cs" />
     <Compile Include="Extensions\DecimalExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
-    <Compile Include="Tests\BookCollectionCloneBehaviorTests.cs" />
-    <Compile Include="Tests\BookCollectionRemoveSetBehaviorTests.cs" />
-    <Compile Include="Tests\BookCollectionSpecialDiscountBehaviorTests.cs" />
+    <Compile Include="Tests\BookSetDiscovererTests.cs" />
+    <Compile Include="Tests\SpecialDiscountCalculatorTests.cs" />
     <Compile Include="UI\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\BookCollectionDisplayBehaviorTests.cs" />
+    <Compile Include="Tests\BookCollectionTests.cs" />
     <Compile Include="Tests\BookTests.cs" />
     <Compile Include="Tests\CostCalculatorTests.cs" />
     <Compile Include="Tests\MoneyTests.cs" />

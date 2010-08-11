@@ -1,17 +1,18 @@
 using KataPotter.Core.Books;
+using KataPotter.Core.BookSets;
 using NUnit.Framework;
 
 namespace KataPotter.Tests
 {
     [TestFixture]
-    public class BookCollectionRemoveSetBehaviorTests
+    public class BookSetDiscovererTests
     {
         [Test]
         public void When_a_book_collection_with_no_books_is_asked_to_RemoveSet__should_remain_empty()
         {
             var bookCollection = new BookCollection(new Book[0]);
 
-            var result = bookCollection.RemoveSet();
+            var result = new BookSetDiscoverer().RemoveSet(bookCollection);
 
             Assert.AreEqual("", result.ToString());
         }
@@ -24,7 +25,7 @@ namespace KataPotter.Tests
                                                             new Book(BookTitle.BookOne)
                                                         });
 
-            var result = bookCollection.RemoveSet();
+            var result = new BookSetDiscoverer().RemoveSet(bookCollection);
 
             Assert.AreEqual("", result.ToString());
         }
@@ -38,7 +39,7 @@ namespace KataPotter.Tests
                                                             new Book(BookTitle.BookOne)
                                                         });
 
-            var result = bookCollection.RemoveSet();
+            var result = new BookSetDiscoverer().RemoveSet(bookCollection);
 
             Assert.AreEqual("1", result.ToString());
         }

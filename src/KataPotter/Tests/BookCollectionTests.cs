@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace KataPotter.Tests
 {
     [TestFixture]
-    public class BookCollectionDisplayBehaviorTests
+    public class BookCollectionTests
     {
         [Test]
         public void When_a_book_collection_is_empty__should_show_itself_as_empty()

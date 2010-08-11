@@ -1,10 +1,11 @@
 using KataPotter.Core.Books;
+using KataPotter.Core.Calculations;
 using NUnit.Framework;
 
 namespace KataPotter.Tests
 {
     [TestFixture]
-    public class BookCollectionSpecialDiscountBehaviorTests
+    public class SpecialDiscountCalculatorTests
     {
         [Test]
         public void When_provided_with_books_that_make_up_two_fourbook_discount__should_indicate_it_qualifies_for_a_special_discount()
@@ -22,7 +23,7 @@ namespace KataPotter.Tests
                                                             new Book(BookTitle.BookFive),
                                                         });
 
-            Assert.IsTrue(bookCollection.QualifiesForSpecialDiscount());
+            Assert.IsTrue(new SpecialDiscountCalculator().Qualifies(bookCollection));
         }
 
         [Test]
@@ -40,7 +41,7 @@ namespace KataPotter.Tests
                                                             new Book(BookTitle.BookFive),
                                                         });
 
-            Assert.IsFalse(bookCollection.QualifiesForSpecialDiscount());
+            Assert.IsFalse(new SpecialDiscountCalculator().Qualifies(bookCollection));
         }
     }
 }

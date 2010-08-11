@@ -1,9 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using KataPotter.Core.BookSets;
 using KataPotter.Core.Calculations;
-using KataPotter.Extensions;
 
 namespace KataPotter.Core.Books
 {
@@ -14,14 +12,6 @@ namespace KataPotter.Core.Books
         public BookCollection(IEnumerable<Book> books)
         {
             _books.AddRange(books);
-        }
-
-        public RemoveSetResult RemoveSet()
-        {
-            var books = Clone();
-            var uniqueBookTitles = books.GetOptimumBookTitlesSet();
-            uniqueBookTitles.Each(books.Remove);
-            return new RemoveSetResult(books, new BookSetFactory().Create(uniqueBookTitles));
         }
 
         //beware, modifies state
@@ -36,50 +26,6 @@ namespace KataPotter.Core.Books
         private void Remove(Book book)
         {
             _books.Remove(book);
-        }
-
-        public BookTitleCollection GetOptimumBookTitlesSet()
-        {
-            if (QualifiesForSpecialDiscount()) return BuildSpecialDiscountBookSet();
-            return BuildLargestBookSetPossible();
-        }
-
-        private BookTitleCollection BuildSpecialDiscountBookSet()
-        {
-            var bookSets = GroupBooksByNumberOfBooksPerTitle();
-            var titles = bookSets
-                .Last()
-                .Select(x => x.Key)
-                .Union(new[]
-                           {
-                               bookSets.First().First().Key
-                           });
-            return new BookTitleCollection(titles);
-        }
-
-        //should be private, but made public for tests
-        public bool QualifiesForSpecialDiscount()
-        {
-            var bookSets = GroupBooksByNumberOfBooksPerTitle();
-            return
-                bookSets.Count() == 2
-                && bookSets.First().Count() == 2
-                && bookSets.First().Key == 1
-                && bookSets.Last().Count() == 3
-                && bookSets.Last().Key == 2;
-        }
-
-        private IOrderedEnumerable<IGrouping<int, IGrouping<BookTitle, Book>>> GroupBooksByNumberOfBooksPerTitle()
-        {
-            return _books.GroupBy(x => x.Title).GroupBy(x => x.Count()).OrderBy(x=>x.Key);
-        }
-
-        private BookTitleCollection BuildLargestBookSetPossible()
-        {
-            var titles = _books
-                .GroupBy(x => x.Title)
-                .Select(x => x.Key);
-            return new BookTitleCollection(titles);
         }
 
         //should be private, but is public for unit tests
