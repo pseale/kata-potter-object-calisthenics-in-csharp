@@ -16,7 +16,7 @@ namespace KataPotter.Core.BookSets
 
         private BookTitleCollection ChooseBooks(BookCollection bookCollection)
         {
-            if (new SpecialDiscountCalculator().Qualifies(bookCollection)) return new SpecialDiscountCalculator().GetBooks(bookCollection);
+            if (new SpecialDiscountCalculator().WorksFor(bookCollection)) return new SpecialDiscountCalculator().GetBooks(bookCollection);
             return new NormalDiscountCalculator().GetBooks(bookCollection);
         }
     }

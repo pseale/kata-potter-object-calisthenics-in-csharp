@@ -23,7 +23,7 @@ namespace KataPotter.Tests
                                                             new Book(BookTitle.BookFive),
                                                         });
 
-            Assert.IsTrue(new SpecialDiscountCalculator().Qualifies(bookCollection));
+            Assert.IsTrue(new SpecialDiscountCalculator().WorksFor(bookCollection));
         }
 
         [Test]
@@ -41,7 +41,7 @@ namespace KataPotter.Tests
                                                             new Book(BookTitle.BookFive),
                                                         });
 
-            Assert.IsFalse(new SpecialDiscountCalculator().Qualifies(bookCollection));
+            Assert.IsFalse(new SpecialDiscountCalculator().WorksFor(bookCollection));
         }
     }
 }

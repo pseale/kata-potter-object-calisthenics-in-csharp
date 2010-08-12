@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using KataPotter.Core.Calculations;
 
 namespace KataPotter.Core.Books
 {
@@ -17,18 +16,11 @@ namespace KataPotter.Core.Books
         //beware, modifies state
         public void Remove(BookTitle bookTitle)
         {
-            var result = _books.Where(x => x.Title == bookTitle);
+            var result = _books.Where(x => x.Accept(y => y == bookTitle));
             if (!result.Any()) return;
-            Remove(result.First());
+            _books.Remove(result.First());
         }
 
-        //beware, modifies state
-        private void Remove(Book book)
-        {
-            _books.Remove(book);
-        }
-
-        //should be private, but is public for unit tests
         public BookCollection Clone()
         {
             return new BookCollection(_books);
@@ -54,7 +46,7 @@ namespace KataPotter.Core.Books
             return string.Join(
                 ";",
                 _books
-                    .OrderBy(x => x.Title)
+                    .OrderBy(x => x.Accept(y=>y))
                     .Select(x => x.ToString())
                     .ToArray());
         }

@@ -21,7 +21,7 @@ namespace KataPotter.Core.Calculations
     public class SpecialDiscountCalculator
     {
         //should be private, but made public for tests
-        public bool Qualifies(BookCollection bookCollection)
+        public bool WorksFor(BookCollection bookCollection)
         {
             if (bookCollection.IsEmpty()) return false;
             //e.g. a book collection fitting this profile: 1;2;3;3;4;4;5;5
@@ -62,7 +62,7 @@ namespace KataPotter.Core.Calculations
         private IEnumerable<IGrouping<int, IGrouping<BookTitle, Book>>> GroupBooks(BookCollection bookCollection)
         {
             return bookCollection
-                .GroupBy(x => x.Title)
+                .GroupBy(x => x.Accept(y=>y))
                 .GroupBy(x => x.Count())
                 .OrderBy(x => x.Key);
         }
