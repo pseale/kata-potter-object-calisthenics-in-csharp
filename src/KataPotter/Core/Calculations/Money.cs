@@ -11,13 +11,8 @@
 
         public Money Add(Money money)
         {
-            if (money == null) return this;
-            return money.Add(_amount);
-        }
-
-        public Money Add(decimal amount)
-        {
-            return new Money(_amount + amount);
+            //use compiler trick to access internal member of another object of the same class
+            return new Money(money._amount + _amount);
         }
 
         public override string ToString()

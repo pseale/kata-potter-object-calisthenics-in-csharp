@@ -14,13 +14,5 @@ namespace KataPotter.Tests
 
             Assert.AreEqual("5.00", money1.Add(money2).ToString());
         }
-
-        [Test]
-        public void When_adding_a_null_value_to_money__should_treat_the_null_value_as_a_zero_value()
-        {
-            var money1 = new Money(1m);
-
-            Assert.AreEqual("1.00", money1.Add(null).ToString());
-        }
     }
 }
