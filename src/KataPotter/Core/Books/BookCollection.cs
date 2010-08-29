@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using KataPotter.Core.Calculations;
 
 namespace KataPotter.Core.Books
 {
@@ -19,21 +18,16 @@ namespace KataPotter.Core.Books
         {
             var result = _books.Where(x => x.Title == bookTitle);
             if (!result.Any()) return;
-            Remove(result.First());
+            _books.Remove(result.First());
         }
 
-        //beware, modifies state
-        private void Remove(Book book)
-        {
-            _books.Remove(book);
-        }
-
-        //should be private, but is public for unit tests
         public BookCollection Clone()
         {
             return new BookCollection(_books);
         }
 
+        //TODO this violates Rule #3 (Wrap all primitives and strings). Unfortunately
+        //I can't figure out a way to get rid of this (without cheating or breaking other rules).
         public bool IsEmpty()
         {
             return _books.Count == 0;

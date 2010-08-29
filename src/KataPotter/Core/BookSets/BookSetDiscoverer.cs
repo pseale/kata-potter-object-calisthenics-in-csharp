@@ -16,6 +16,8 @@ namespace KataPotter.Core.BookSets
 
         private BookTitleCollection ChooseBooks(BookCollection bookCollection)
         {
+            //TODO not sure if this is a violation of object calisthenics rules.
+            //If it is, replace this with a Specification-ish setup (we're almost there anyway).
             if (new SpecialDiscountCalculator().Qualifies(bookCollection)) return new SpecialDiscountCalculator().GetBooks(bookCollection);
             return new NormalDiscountCalculator().GetBooks(bookCollection);
         }

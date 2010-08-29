@@ -43,13 +43,8 @@
   <ItemGroup>
     <Compile Include="Core\BookSets\BookSetDiscoverer.cs" />
     <Compile Include="Core\BookSets\BookSetFactory.cs" />
-    <Compile Include="Core\BookSets\EmptyBookSet.cs" />
-    <Compile Include="Core\BookSets\FiveBookSet.cs" />
-    <Compile Include="Core\BookSets\FourBookSet.cs" />
+    <Compile Include="Core\BookSets\BookSets.cs" />
     <Compile Include="Core\BookSets\IBookSet.cs" />
-    <Compile Include="Core\BookSets\OneBookSet.cs" />
-    <Compile Include="Core\BookSets\ThreeBookSet.cs" />
-    <Compile Include="Core\BookSets\TwoBookSet.cs" />
     <Compile Include="Core\Books\Book.cs" />
     <Compile Include="Core\Books\BookCollection.cs" />
     <Compile Include="Core\Calculations\CostCalculator.cs" />
