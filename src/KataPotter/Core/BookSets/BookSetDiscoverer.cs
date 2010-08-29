@@ -18,7 +18,7 @@ namespace KataPotter.Core.BookSets
         {
             //TODO not sure if this is a violation of object calisthenics rules.
             //If it is, replace this with a Specification-ish setup (we're almost there anyway).
-            if (new SpecialDiscountCalculator().Qualifies(bookCollection)) return new SpecialDiscountCalculator().GetBooks(bookCollection);
+            if (new SpecialDiscountCalculator().WorksFor(bookCollection)) return new SpecialDiscountCalculator().GetBooks(bookCollection);
             return new NormalDiscountCalculator().GetBooks(bookCollection);
         }
     }

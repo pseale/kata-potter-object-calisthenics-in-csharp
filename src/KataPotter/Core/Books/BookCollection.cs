@@ -16,7 +16,7 @@ namespace KataPotter.Core.Books
         //beware, modifies state
         public void Remove(BookTitle bookTitle)
         {
-            var result = _books.Where(x => x.Title == bookTitle);
+            var result = _books.Where(x => x.Accept(y => y == bookTitle));
             if (!result.Any()) return;
             _books.Remove(result.First());
         }
@@ -48,7 +48,7 @@ namespace KataPotter.Core.Books
             return string.Join(
                 ";",
                 _books
-                    .OrderBy(x => x.Title)
+                    .OrderBy(x => x.Accept(y=>y))
                     .Select(x => x.ToString())
                     .ToArray());
         }
